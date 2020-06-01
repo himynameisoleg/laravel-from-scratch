@@ -9,14 +9,14 @@ class PostsController extends Controller
     public function show($slug)
 	{
         // use Post model to grab data
-        $post = Post::where('slug', $slug)->first();
+        $post = Post::where('slug', $slug)->firstOrFail();
 
         // or manually connect to db and query
         // $post = DB::table('posts')->where('slug', $slug)->first();
 
-         if (! $post) {
-             abort('404');
-         }
+        //  if (! $post) {
+        //      abort('404');
+        //  }
 
         // dd($posts);
 

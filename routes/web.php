@@ -12,11 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/posts/{post}', 'PostsController@show');
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/about', function () {
-    return view('about');
+    // $article = App\Article::take(2)->get();
+    // $article = App\Article::paginate(2);
+    return view('about', [
+        'articles' => App\Article::take(3)->latest()->get()
+    ]);
 });

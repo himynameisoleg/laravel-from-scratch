@@ -15,6 +15,8 @@
             @csrf
             @method ('PUT')
 
+
+
             <div class="field">
                 <label class="label" for="title">Title</label>
                 <p class="control">

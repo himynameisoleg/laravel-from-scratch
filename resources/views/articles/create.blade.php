@@ -17,21 +17,36 @@
 			<div class="field">
 				<label class="label" for="title">Title</label>
 				<p class="control">
-					<input class="input" name="title" type="text" placeholder="Text input">
+					<input class="input @error('title') is-danger @enderror " name="title" type="text" placeholder="Text input"
+						value="{{ old('title') }}">
+
+					@error('title')
+					<p class="help is-danger">{{ $errors->first('title') }}</p>
+					@enderror
 				</p>
 			</div>
 
 			<div class="field">
 				<label class="label" for="excerpt">Excerpt</label>
 				<p class="control">
-					<textarea class="input" name="excerpt" type="text" placeholder="Text input"></textarea>
+					<textarea class="input @error('excerpt') is-danger @enderror" name="excerpt" type="text"
+						placeholder="Text input">{{ old('excerpt') }}</textarea>
+
+					@error('excerpt')
+					<p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+					@enderror
 				</p>
 			</div>
 
 			<div class="field">
 				<label class="label" for="body">Body</label>
 				<p class="control">
-					<textarea class="textarea" name="body" placeholder="Textarea"></textarea>
+					<textarea class="textarea @error('body') is-danger @enderror" name="body" placeholder="Textarea"
+						>{{ old('body') }}</textarea>
+
+					@error('body')
+					<p class="help is-danger">{{ $errors->first('body') }}</p>
+					@enderror
 				</p>
 			</div>
 

@@ -16,13 +16,12 @@ class ArticlesController extends Controller
     public function show($id)
     {
         $article = Article::find($id);
-        return view('articles.show', [ 'article' => $article ]);
+        return view('articles.show', ['article' => $article]);
     }
 
     public function create()
     {
         return view('articles.create');
-
     }
 
     public function store()
@@ -46,11 +45,11 @@ class ArticlesController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
-        return view('articles.edit', [ 'article' => $article ]); // or can use compact('article') instead of ['article' => $article]
+        return view('articles.edit', ['article' => $article]); // or can use compact('article') instead of ['article' => $article]
     }
 
     public function update($id)
-    { 
+    {
         request()->validate([
             'title' => 'required',
             'excerpt' => 'required',
@@ -68,9 +67,5 @@ class ArticlesController extends Controller
 
     public function destroy()
     {
-
     }
-
-
-
 }

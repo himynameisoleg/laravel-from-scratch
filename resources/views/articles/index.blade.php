@@ -1,4 +1,3 @@
-
 @extends ('layout')
 
 @section ('content')
@@ -9,7 +8,10 @@
 		<div id="content">
 			<div class="title">
 				<h2>
-					<a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
+					{{-- verbos NAMED ROUTE way --}}
+					{{-- <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a> --}}
+					{{-- Or with CUSTOM path() method --}}
+					<a href="{{ $article->path() }}">{{ $article->title }}</a>
 				</h2>
 				<span class="byline">{{ $article->excerpt }}</span>
 			</div>

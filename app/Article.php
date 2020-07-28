@@ -25,4 +25,9 @@ class Article extends Model
       // in this case we need to pass the foreign key as an argument because Laravel 
       // expects a certain convention to be followed
    }
+
+   public function tags()
+   {
+      return $this->belongsToMany(Tag::class);
+   }
 }

@@ -21,6 +21,9 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
+Route::post('payments', 'PaymentsController@store')->name('payments')->middleware('auth');
+
 Route::get('/about', function () {
     // $article = App\Article::take(2)->get();
     // $article = App\Article::paginate(2);

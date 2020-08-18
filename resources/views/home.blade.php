@@ -15,6 +15,7 @@
                     @endif
 
                     {{ 'You are logged in.' }}
+                    <a href="/welcome">Welcome</a>
                     {{-- {{ 'You are logged in, ' . Auth::user()->name . '.'}} --}}
                 </div>
             </div>

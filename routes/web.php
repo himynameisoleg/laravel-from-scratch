@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
 Route::post('payments', 'PaymentsController@store')->name('payments')->middleware('auth');
 
-Route::post('payments', 'PaymentsController@store')->name('payments')->middleware('auth');
+Route::get('notifications/show', 'UserNotificationsController@show')->middleware('auth');
 
 
 

@@ -45,6 +45,7 @@ class User extends Authenticatable
      */
     public function routeNotificationForNexmo($notification)
     {
-        return 'HARD CODED MY NUMBER HERE. IT WORKED :)';
+        // HARD CODED MY NUMBER HERE. IT WORKED :)
+        return '15555555555';
     }
 }

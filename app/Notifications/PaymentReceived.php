@@ -32,7 +32,11 @@ class PaymentReceived extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'database', 'nexmo'];
+        return [
+            'mail', 
+            'database', 
+            // 'nexmo'
+        ];
     }
 
     /**

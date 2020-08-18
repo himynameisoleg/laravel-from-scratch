@@ -11,14 +11,16 @@ class PaymentReceived extends Notification
 {
     use Queueable;
 
+    protected $amount;
+    
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($amount)
     {
-        //
+        $this->amount = $amount;
     }
 
     /**
@@ -29,7 +31,7 @@ class PaymentReceived extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -41,7 +43,10 @@ class PaymentReceived extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->subject('Payment Confirmations from Laravel')
+                    ->greeting('YO yo Yooo!')
                     ->line('The introduction to the notification.')
+                    ->line('Lorem Ipsum Test')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
@@ -55,7 +60,7 @@ class PaymentReceived extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'amount' => $this->amount             
         ];
     }
 }

@@ -18,7 +18,7 @@ class PaymentsController extends Controller
         // Notification::send(request()->user(), new PaymentReceived());
 
         // more commonly we use this:
-        request()->user()->notify(new PaymentReceived());
+        request()->user()->notify(new PaymentReceived(900));
 
         return redirect()->route('home');
     }

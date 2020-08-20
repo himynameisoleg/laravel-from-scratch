@@ -28,6 +28,9 @@ Route::post('payments', 'PaymentsController@store')->name('payments')->middlewar
 Route::get('notifications/show', 'UserNotificationsController@show')->middleware('auth');
 
 
+Route::get('conversations', 'ConversationsController@index');
+Route::get('conversations/{conversation}', 'ConversationsController@show');
+
 
 Route::get('/posts/{post}', 'PostsController@show');
 

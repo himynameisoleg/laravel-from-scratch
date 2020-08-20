@@ -48,4 +48,14 @@ class User extends Authenticatable
         // HARD CODED MY NUMBER HERE. IT WORKED :)
         return '15555555555';
     }
+
+    public function conversations()
+    {
+        return $this->hasMany(Conversation::class);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 }

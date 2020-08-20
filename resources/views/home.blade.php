@@ -25,6 +25,9 @@
                         <li>
                             <a href="/notifications/show">Notifications</a>
                         </li>
+                        <li>
+                            <a href="/conversations">Conversations</a>
+                        </li>
                     </ul>
 
                     {{-- {{ 'You are logged in, ' . Auth::user()->name . '.'}} --}}

@@ -27,6 +27,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::before(function (User $user) {
+            if ($user->id == 7) { // admin
+                return true;
+            }
+        });
         // REMOVED BECAUSE we are now using a ConversationPolicy policy class instead of writing custom definitions
         // Gate::define('update-conversation', function (User $user, Conversation $conversation) {
         //     return $conversation->user->is($user);

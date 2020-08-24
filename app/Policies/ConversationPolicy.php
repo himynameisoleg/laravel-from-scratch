@@ -18,6 +18,12 @@ class ConversationPolicy
      * @return mixed
      */
 
+    // regular way of setting up auth in the policy
+    // public function view(User $user, Conversation $conversation)
+    // {
+    //     return $conversation->user->is($user);
+    // }
+
     // If we dont want to do this for every Policy we can simple move this up to the global level.
     // public function before(User $user)
     // {

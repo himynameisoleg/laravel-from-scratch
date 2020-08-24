@@ -16,6 +16,9 @@ class ConversationsController extends Controller
 
     public function show(Conversation $conversation)
     {
+        // lets say we want only the person who created the conversation to be able to view it
+        $this->authorize('view', $conversation);
+
         return view('conversations.show', [
             'conversation' => $conversation
         ]);
